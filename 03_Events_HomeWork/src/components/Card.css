@@ -1,0 +1,80 @@
+.CardDiv {
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    position: relative;
+    border-radius: 25px;
+
+}
+
+.CardImg {
+    width: 300px;
+}
+
+.CardBtn {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: 0px black;
+    border-radius: 15px;
+}
+
+.CardBtn2 {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border: 0px black;
+    border-radius: 15px;
+    background-color: transparent;
+
+}
+
+.TextDiv {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+    margin-left: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.CardTitle {
+    margin: 0px;
+}
+
+.greenClass {
+    margin: 0px;
+    color: green;
+
+}
+
+.redClass {
+    margin: 0px;
+    color: red;
+}
+
+.CardPrice {
+    margin: 0px;
+    color: red;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.CardRating {
+    margin: 0px;
+}
+
+.buttonImg {
+    width: 35px;
+    margin: auto auto;
+}

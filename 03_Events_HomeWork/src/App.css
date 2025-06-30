@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.CardsMap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  
+}
+
