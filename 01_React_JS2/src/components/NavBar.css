@@ -1,0 +1,62 @@
+
+.Home nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Home nav ul li {
+    display: inline-block;
+}
+
+.Home nav a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+.Home nav a:hover {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 229, 194);
+}
+
+
+footer {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.FullRow
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; 
+
+
+}
+.CollumnRow{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+}
+.SecondRow
+{
+    margin-top: 20px;
+}

@@ -1,0 +1,82 @@
+
+.ImageSrc
+{
+  width: 200px;
+  display: block;
+  align-self:flex-start;
+  margin: 20px;
+  
+  
+}
+.AllPages
+{
+
+  display: block;
+  margin: 0 auto;
+
+  flex-direction: column;
+  
+  
+}
+.FirstRow
+{
+  width: 80vw;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  
+}
+.SecondRow
+{
+  width: 80vw;
+
+  background-color: rgba(245, 249, 241, 0.8);
+  margin-top: 20px;
+  border-radius: 30px;
+  flex-direction: row;
+  color: black;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  
+}
+.RowCard
+{
+  width: 80vw;
+  height: 400px;
+  background-color: rgba(245, 249, 241, 0.8);
+  display: flex;
+  margin-top: 20px;
+  border-radius: 30px;
+  flex-direction: row;
+  color: black;
+}
+.collumnCard{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 10px;
+}
+.Text{
+
+  font-size: 40px;
+}
+
+.ImageCard{
+  height: 150px;
+  display: block;
+  margin: auto auto;
+
+}
+.ImagesCards{
+  width: 80vw;
+  flex-wrap: wrap;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
