@@ -1,0 +1,56 @@
+.Block
+{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    font-size: 17px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    border: 3px #ececec solid;
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 25px;
+    text-align: start;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.Tititle
+{
+ font-size: 20px; 
+ font-weight: bold;  
+ margin-left: 20px;
+}
+.Date{
+    color: #9c9c9c;
+    
+}
+
+.Stars{
+    margin: 0px;
+    font-size: 25px;
+    margin-left: 20px;
+    color:#ffaa02;
+}
+.Text1{
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.Text2{
+    margin: 5px;
+    margin-left: 20px;
+}
+
+.Text3{
+    margin: 5px;
+    margin-left: 20px;
+}
+.Span{
+    font-weight: bold;
+}
