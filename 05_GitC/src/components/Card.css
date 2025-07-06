@@ -1,0 +1,144 @@
+.MainCard {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 500px;
+
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 20px 1px rgb(237, 237, 237);
+}
+
+.ImgCard {
+    width: 150px;
+    height: 150px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 200px;
+}
+
+.CardRow {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.CardRowBt {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.BoldTextH2 {
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 0px;
+    margin-top: 5px;
+
+}
+
+.GrayText {
+    color: rgb(109, 108, 108);
+}
+
+.CardCollum {
+    display: flex;
+    flex-direction: column;
+}
+
+.ImgIcon {
+    margin-left: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.ImgIconBt {
+
+    height: 20px;
+    width: 20px;
+}
+
+.BoldText {
+    font-weight: bolder;
+}
+
+.BoldTextBt {
+    font-weight: bolder;
+    margin: 0px;
+
+}
+
+.SpanText {
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.SpanText1 {
+    font-weight: normal;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.CardCollum1 {
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 10px;
+}
+
+.hrbt {
+    color: rgb(109, 108, 108);
+    margin: 5px;
+    margin-bottom: 20px;
+
+}
+.RowSearch
+{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.search-input {
+    height: 50px;
+    flex-grow: 1;
+    border-radius: 25px;
+    outline: none;
+    border: 0px;
+    box-shadow: 0px 2px 20px 1px rgb(237, 237, 237);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 5px;
+}
+.btnsrch
+{
+    
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+     outline: none;
+    border: 0px;
+    box-shadow: 0px 2px 20px 1px rgb(237, 237, 237);
+    color: white;
+    background-color: rgb(255, 0, 72);
+    transition: all 0.5s;
+    font-weight: bold;
+    font-size: 15px;
+
+
+}
+.btnsrch:hover
+{
+    transition: all 0.5s;
+    transform: scale(1.1);
+    background-color: rgb(228, 0, 65);
+
+}
+

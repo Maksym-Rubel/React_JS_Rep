@@ -65,11 +65,25 @@
 
 .CardPrice {
     margin: 0px;
-    color: red;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
     font-size: 30px;
 }
-
+.CardPrice2
+{
+    margin: 0px;
+    color: #909090;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration:line-through;
+}
+.CardPrice1
+{
+    margin: 0px;
+    color: #f94247;;
+    font-weight: bolder;
+    font-size: 30px;
+}
 .CardRating {
     margin: 0px;
 }
@@ -77,4 +91,32 @@
 .buttonImg {
     width: 35px;
     margin: auto auto;
+}
+.discountDiv
+{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 40px;
+    background-color:#f94247;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 30px;
+}
+.noDiscount
+{
+    display: none;
+}
+.AddDiscountText
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+
 }

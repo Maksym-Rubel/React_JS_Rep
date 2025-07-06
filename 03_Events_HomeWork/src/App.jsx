@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/Card.jsx'
+import CardList from './components/CardList.jsx'
 
 function App() {
   const cardsData = [
@@ -14,7 +15,9 @@ function App() {
       quantity: 10,
       price: 299,
       favorite: true,
-      koshyk: false
+      koshyk: false,
+      sale: 0
+
     },
     {
       id: 2,
@@ -24,7 +27,8 @@ function App() {
       quantity: 5,
       price: 199,
       favorite: true,
-      koshyk: false
+      koshyk: false,
+      sale: 0
 
 
     },
@@ -36,7 +40,8 @@ function App() {
       quantity: 2,
       price: 399,
       favorite: false,
-      koshyk: false
+      koshyk: false,
+      sale: 50
 
 
     },
@@ -48,7 +53,8 @@ function App() {
       quantity: 10,
       price: 299,
       favorite: true,
-      koshyk: false
+      koshyk: false,
+      sale: 10
     },
     {
       id: 2,
@@ -58,7 +64,8 @@ function App() {
       quantity: 5,
       price: 199,
       favorite: true,
-      koshyk: false
+      koshyk: false,
+      sale: 5
 
 
     },
@@ -70,25 +77,19 @@ function App() {
       quantity: 2,
       price: 399,
       favorite: false,
-      koshyk: false
+      koshyk: false,
+      sale: 20
+
 
 
     }
   ];
-
+  
   return (
     <>
-      <div className="wrapper">
-        <div className='CardsMap'>
-          {cardsData.map((i) => (
-            <Card
-              {...i}
-            />
-          ))}
-        </div>
-      </div>
+      
 
-
+      <CardList tasklist={cardsData}></CardList>
 
 
     </>
