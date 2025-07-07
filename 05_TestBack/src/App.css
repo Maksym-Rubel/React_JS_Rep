@@ -1,0 +1,11 @@
+.backgroundimage
+{
+  width: 100dvw;
+  position: absolute;
+}
+.divmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

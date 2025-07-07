@@ -1,0 +1,129 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+ul.todo_list {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.todo_list li .important {
+  margin: 0 8px;
+  color: darkred;
+  display: inline-block;
+}
+
+.todo_list li .deadline {
+  background-color: rgb(120, 153, 164);
+  color: white;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-left: 10px;
+}
+
+.todo_list li {
+  padding: 12px;
+  padding-left: 40px;
+}
+
+.todo_list li:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+.todo_list>li:nth-child(even) {
+  background-color: rgb(174, 216, 229);
+}
+
+.todo_list>li:nth-child(odd) {
+  background-color: rgb(51, 138, 168);
+}
+
+.todo_list li.done {
+  background-color: rgb(226, 226, 226);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.todo_list li .btn-del {
+  margin: 0 10px;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(174, 216, 229);
+}
+
+.Layout {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Layout main {
+  flex: 1;
+}
+
+main {
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.CreateTask {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+.CreateTask h2 {
+  text-align: center;
+}
+
+.CreateTask label {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+}
+
+.CreateTask label input {
+  flex-grow: 1;
+}
+
+.CreateTask label input[type="checkbox"] {
+  flex-grow: 0;
+}

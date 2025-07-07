@@ -1,0 +1,36 @@
+.blursvg {
+    margin: 10px;
+    width: 500px;
+    height: 600px;
+    backdrop-filter: blur(17px);
+    border-radius: 35px;
+}
+.blursvg1
+{
+    margin: 10px;
+    width: 500px;
+    height: 600px;
+    backdrop-filter: blur(17px);
+    padding: 5px;
+    
+
+}
+.blurrec {
+    stroke: url(#myGradient);
+    stroke-width: 2px;
+    fill:none;
+}
+.redrec
+{
+    fill: red;
+    z-index: 2;
+}
+.redrec1
+{
+    margin: 10px;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 2;
+
+}
