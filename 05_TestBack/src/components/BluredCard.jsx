@@ -3,23 +3,7 @@ import "./BluredCard.css"
 export default function BluredCard() {
     return (
         <>
-            <svg className='blursvg'>
-                <defs>
-                    <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="rgba(255, 255, 255, 0.4)" />
-                        <stop offset="46%" stop-color="rgba(255, 255, 255, 0)" />
-                        <stop offset="100%" stop-color="rgba(255, 255, 255, 0.4)" />
-                    </linearGradient>
-                </defs>
-                <rect className='blurrec'
-                    x="0"
-                    y="0"
-                    rx="35"
-                    yx="35"
-                    width="500"
-                    height="600"
-                    fill="transparent"></rect>
-            </svg>
+            
            
         </>
     )
