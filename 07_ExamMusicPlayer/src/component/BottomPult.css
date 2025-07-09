@@ -9,13 +9,22 @@
     align-items: center;
     justify-content: space-between;
     color: white;
+    font-family: Poppins, sans-serif;
 }
+
 
 .SongImg {
     width: 80px;
     height: 80px;
     border-radius: 20%;
     margin-left: 20px;
+}
+
+CollumnInRow2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Row1 {
@@ -26,7 +35,7 @@
     align-items: center;
     justify-content: start;
     gap: 20px;
-    font-family: Poppins, sans-serif;
+
 }
 
 .Row2 {
@@ -35,8 +44,27 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     gap: 20px;
+}
+
+.Row2Buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.TimeDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #9a9a9a;
+    margin: 0px;
+
+    font-size: 14px;
 }
 
 .Row3 {
@@ -45,8 +73,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: end;
     gap: 20px;
+    margin-right: 20px;
 }
 
 .SongImg1 {
@@ -108,8 +137,74 @@
 }
 
 .ImgIcon {
-    width: 30px;
-    height: 30px;
-    margin-left: 5px;
+    width: 20px;
+    height: 20px;
 
+
+}
+
+.Range {
+    width: 100px;
+    height: 5px;
+    /* background-color: #ffffff; */
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    border: 0px;
+    /* background: linear-gradient(to right, green 50%, #ccc 50%); */
+
+}
+
+.Range1 {
+    width: 300px;
+    height: 5px;
+
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    border: 0px;
+    margin-bottom: 10px
+}
+
+.Range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.Range:hover::-webkit-slider-thumb,
+.Range:active::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    border-bottom: 0.3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px #00000044;
+}
+
+
+
+
+.Range1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.Range1:hover::-webkit-slider-thumb,
+.Range1:active::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    border-bottom: 0.3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px #00000044;
 }
