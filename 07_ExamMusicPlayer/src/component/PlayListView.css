@@ -1,0 +1,27 @@
+.PlayListMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.ImgMain {
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    margin: 5px
+}
+
+.PlayListName {
+    font-size: 15px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}
+
+.PlayListAuthor {
+    font-size: 12px;
+    color: #9a9a9a;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}

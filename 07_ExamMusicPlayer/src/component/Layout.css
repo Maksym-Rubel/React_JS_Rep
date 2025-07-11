@@ -1,0 +1,60 @@
+ /* .RowMain {
+
+     flex: 1;
+     background-color: antiquewhite;
+     display: flex;
+     /* justify-content: center;
+     align-items: end; 
+
+ }
+
+ .Layout {
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+ }
+
+ .footerLast {
+     height: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: end;
+ } */
+
+ /* .MainPage::-webkit-scrollbar {
+    display: none;
+} */
+
+ .Layout {
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     /* background-color: wheat; */
+     /* justify-content: end; */
+ }
+
+ .RowMain {
+     height: 530px;
+     margin: 0px;
+     padding: 0px;
+     /* display: flex; */
+     /* background-color: antiquewhite; */
+ }
+
+ .MainPage1 {
+     height: 550px;
+     margin: 0px;
+     padding: 0px;
+     width: 100%;
+
+ }
+
+ .footerLast {
+     height: 100px;
+     background: #181818f5;
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 20px;
+ }

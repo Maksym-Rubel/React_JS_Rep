@@ -1,6 +1,7 @@
-.MainBottomPult {
-    position: fixed;
-    bottom: 0;
+/* .MainBottomPult {
+    
+    /* position: fixed;
+    bottom: 0; 
     width: 100%;
     height: 100px;
     background-color: #181818f5;
@@ -10,17 +11,27 @@
     justify-content: space-between;
     color: white;
     font-family: Poppins, sans-serif;
+} */
+
+.MainBottomPult {
+  height: 100px;
+  width: 100%;
+  background-color: #181818f5;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: Poppins, sans-serif;
 }
-
-
 .SongImg {
     width: 80px;
     height: 80px;
-    border-radius: 20%;
+    border-radius: 5%;
     margin-left: 20px;
 }
 
-CollumnInRow2 {
+.CollumnInRow2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,13 +102,29 @@ CollumnInRow2 {
 }
 
 .blursvg {
-    margin: 10px;
+    margin: 5px;
     width: 60px;
     height: 60px;
     backdrop-filter: blur(17px);
     border-radius: 35px;
 
 
+}
+.blursvg1 {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    backdrop-filter: blur(17px);
+    border-radius: 35px;
+
+
+}
+.blursvg2 {
+    margin: 5px;
+    width: 60px;
+    height: 40px;
+    backdrop-filter: blur(17px);
+    border-radius: 15px; 
 }
 
 
@@ -126,6 +153,24 @@ CollumnInRow2 {
     padding: 10px;
 }
 
+.ButtonNextPrev {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
 .PositionDiv {
     position: relative;
     margin: 0px;
@@ -139,7 +184,10 @@ CollumnInRow2 {
 .ImgIcon {
     width: 20px;
     height: 20px;
-
+    background-image: url(../../public/imgs/playicon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -157,7 +205,7 @@ CollumnInRow2 {
 
 .Range1 {
     width: 300px;
-    height: 5px;
+    height: 4px;
 
     border-radius: 5px;
     appearance: none;
@@ -207,4 +255,70 @@ CollumnInRow2 {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 2px #00000044;
+}
+
+.ImgIconPause {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../public/imgs/pause.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconPrev
+{
+    margin-right: 5px;
+
+    width: 20px;
+    height: 20px;
+    background-image: url(../../public/imgs/prev.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconNext
+{
+    margin-left: 4px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../public/imgs/next.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconRepeat
+{
+    width: 25px;
+    height: 25px;
+    background-image: url(../../public/imgs/repeat.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconRepeatActive
+{
+    width: 25px;
+    height: 25px;
+    background-image: url(../../public/imgs/repeatActive.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconShuffle
+{
+    width: 20px;
+    height: 20px;
+    background-image: url(../../public/imgs/shuffle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ImgIconShuffleActive
+{
+    width: 20px;
+    height: 20px;
+    background-image: url(../../public/imgs/shuffleActive.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }

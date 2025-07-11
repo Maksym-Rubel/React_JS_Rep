@@ -1,0 +1,96 @@
+.left-menu {
+    
+ 
+
+    width: 300px;
+    height: 490px;
+
+    background: linear-gradient(180deg, #181818f5, #181818d4);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: block;
+    font-family: Poppins, sans-serif;
+
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 15px;
+}
+.AllMenuLeft
+{
+    margin: 0px;
+    gap: 0px;
+}
+.left-menu-header {
+
+
+    width: 300px;
+    height: 60px;
+
+    border-radius: 15px 15px 0px 0px;
+    background-color: #181818f5;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: Poppins, sans-serif;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+.left-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.blursvg22 {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    backdrop-filter: blur(17px);
+    border-radius: 10px;
+}
+
+.blursvg3 {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    backdrop-filter: blur(17px);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.SearchPlaylist {
+
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+    outline: none;
+    width: 175px;
+    left: 5px;
+    margin: 10px;
+
+
+}
+
+.blurrec {
+    stroke: url(#myGradient);
+    stroke-width: 2px;
+    fill: none;
+}
+
+.AddPlayList {
+    width: 15px;
+    height: 15px;
+    background-image: url(../../public/imgs/add.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

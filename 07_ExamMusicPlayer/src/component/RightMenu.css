@@ -1,0 +1,99 @@
+.left-menu1 {
+
+
+
+    width: 300px;
+    height: 550px;
+    border-radius: 15px 15px 0px 0px;
+
+    background: linear-gradient(180deg, #181818f5, #181818d4);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: block;
+    font-family: Poppins, sans-serif;
+
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 10px;
+}
+
+.AllMenuLeft {
+    margin: 0px;
+    gap: 0px;
+}
+
+
+.left-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.blursvg22 {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    backdrop-filter: blur(17px);
+    border-radius: 10px;
+}
+
+.blursvg3 {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    backdrop-filter: blur(17px);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.SearchPlaylist {
+
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+    outline: none;
+    width: 175px;
+    left: 5px;
+    margin: 10px;
+
+
+}
+
+.blurrec {
+    stroke: url(#myGradient);
+    stroke-width: 2px;
+    fill: none;
+}
+
+.AddPlayList {
+    width: 15px;
+    height: 15px;
+    background-image: url(../../public/imgs/add.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.imgSet
+{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.PlayListName1 {
+    font-size: 20px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}
+
+.PlayListAuthor1 {
+    font-size: 17px;
+    color: #9a9a9a;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}

@@ -1,0 +1,77 @@
+.PlayListMenu1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+    transition: all 0.6s;
+
+    
+}
+.PlayListMenu1:hover{
+    transition: all 0.6s;
+
+    background-color: rgba(59, 59, 59, 0.692);
+    border-radius: 10px;
+
+
+    
+}
+.PlayListMenu2
+{
+    transition: all .7s;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-radius: 10px;
+
+    background-color: rgb(59, 59, 59);
+}
+
+.ImgMain {
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    margin: 5px
+}
+
+.PlayListName {
+    transition: all 0.3s;
+    font-size: 15px;
+    font-weight:600;
+
+    color: white;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}
+.PlayListNameActive {
+    transition: all 0.3s;
+
+    font-size: 15px;
+    color: #1ac35a;
+    font-weight:600;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}
+
+.PlayListAuthor {
+    font-size: 12px;
+    color: #9a9a9a;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+}
+.idNum
+{
+    font-size: 17px;
+    color: #ffffff;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+    margin-right: 15px;
+}

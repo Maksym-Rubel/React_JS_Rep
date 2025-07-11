@@ -1,0 +1,45 @@
+.MainPageBack1 {
+
+
+    height: 400px;
+
+
+    background: linear-gradient(180deg, #181818f5, #181818d4);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: block;
+    font-family: Poppins, sans-serif;
+
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 15px;
+}
+
+.MainPageBack1::-webkit-scrollbar {
+    display: none;
+}
+
+.MainDivOrig {
+    height: 700px;
+}
+
+.PlaylistInfo {
+    overflow:hidden;
+
+    height: 150px;
+    border-radius: 15px 15px 0px 0px;
+
+    background: linear-gradient(180deg, #181818f5, #181818d4);
+    backdrop-filter: blur(10px);
+    color: white;
+    display: block;
+    font-family: Poppins, sans-serif;
+
+    box-sizing: border-box;
+    padding: 8px;
+}
+.AlbumImage
+{
+    width: 130px;
+    border-radius: 7px;
+}
