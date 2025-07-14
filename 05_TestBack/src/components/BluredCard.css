@@ -17,7 +17,7 @@
 }
 .blurrec {
     stroke: url(#myGradient);
-    stroke-width: 2px;
+    stroke-width: 3px;
     fill:none;
 }
 .redrec

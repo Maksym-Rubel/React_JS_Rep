@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { CounterContext } from '../contexts/counter.context';
 
-export default function ToDoItem({ id, title, date, complete, important, removeFunction }) {
+export default function ToDoItem({ id, todo, date, completed, important, removeFunction }) {
 
     // { state } allows component to automatically re-render when changed
-    const [status, setStatus] = useState(complete);
+    const [status, setStatus] = useState(completed);
     const { value, setValue } = useContext(CounterContext);
 
     
@@ -27,7 +27,7 @@ export default function ToDoItem({ id, title, date, complete, important, removeF
         <li onClick={toggleStatus} onDoubleClick={() => removeFunction(id)} className={status ? "done" : ""}>
             <input type="checkbox"  checked={status} />
             {important ? <span className="important">!</span> : ""}
-            {title ?? "No title"}
+            {todo ?? "No title"}
             {date ? <span className="deadline">{date}</span> : ""}
             <button className="btn-del" onClick={() => removeFunction(id)}>Del</button>
         </li>

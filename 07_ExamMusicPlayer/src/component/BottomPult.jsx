@@ -6,16 +6,9 @@ import ColorThief from 'colorthief';
 export default function BottomPult({ playlist }) {
 
     const { value, setValue, Current_Song_Playlist, setCurrent_Song_Playlist } = useContext(CounterContext);
-
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [SongEnded, setSongEnded] = useState(false);
-
     const [PlayListAudio, setPlayListAudio] = useState(playlist);
-
-
-
-
     const [volume, setVolume] = useState(0.5);
     const [currentTime, setTime] = useState(0);
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -23,6 +16,7 @@ export default function BottomPult({ playlist }) {
     const [gradients, setGradient] = useState("");
     const [repeat, setRepeat] = useState(false);
     const [shuffle, setShuffle] = useState(false);
+    const [IsNextPrev, setNextPrev] = useState(false);
     useEffect(() => {
 
         if (audioRef.current) {
@@ -44,20 +38,26 @@ export default function BottomPult({ playlist }) {
     }, [Current_Song_Playlist]);
 
     useEffect(() => {
-        if (isPlaying) {
-            audioRef.current.pause();
+        if (IsNextPrev) {
+            setNextPrev(false);
         }
-        setCurrentSongIndex(value);
-        audioRef.current = new Audio(Current_Song_Playlist[value].src);
-        audioRef.current.addEventListener('loadedmetadata', () => {
-            setDuration(audioRef.current.duration);
+        else {
+            if (isPlaying) {
+                audioRef.current.pause();
+            }
+            setCurrentSongIndex(value);
+            audioRef.current = new Audio(Current_Song_Playlist[value].src);
+            audioRef.current.addEventListener('loadedmetadata', () => {
+                setDuration(audioRef.current.duration);
 
-        });
-        audioRef.current.volume = volume;
+            });
+            audioRef.current.volume = volume;
 
-        audioRef.current.addEventListener("timeupdate", onTimeUpdate);
-        audioRef.current.play();
-        setIsPlaying(true);
+            audioRef.current.addEventListener("timeupdate", onTimeUpdate);
+            audioRef.current.play();
+            setIsPlaying(true);
+        }
+
     }, [value]);
     function getRandomSongIndex(currentIndex, playlistLength) {
         if (playlistLength <= 1) return 0;
@@ -126,7 +126,9 @@ export default function BottomPult({ playlist }) {
             const gradientStr = `linear-gradient(
                   to left, 
                   rgba(24,24,24,0.96) 0%, 
-                  rgba(24,24,24,0.96) 93%, 
+                   rgba(24,24,24,0.96) 10%, 
+                  rgba(${dominantColor.join(',')},0.2) 50%,
+                  rgba(24,24,24,0.96)97%, 
                   rgb(${dominantColor.join(',')}) 100%
 
                 )`;
@@ -138,8 +140,10 @@ export default function BottomPult({ playlist }) {
 
                 const gradientStr = `linear-gradient(
                   to left, 
-                  rgba(24,24,24,0.96) 0%, 
-                  rgba(24,24,24,0.96)93%, 
+                  rgba(24,24,24,0.96) 0%,
+                  rgba(24,24,24,0.96) 10%, 
+                  rgba(${dominantColor.join(',')},0.2) 50%,
+                  rgba(24,24,24,0.96)97%, 
                   rgb(${dominantColor.join(',')}) 100%
 
                 )`;
@@ -205,7 +209,7 @@ export default function BottomPult({ playlist }) {
         }
     }
     function NextSong() {
-
+        setNextPrev(true);
         let nextindex;
         if (PlayListAudio.length == currentSongIndex + 1) {
             setCurrentSongIndex(0);
@@ -234,6 +238,8 @@ export default function BottomPult({ playlist }) {
         audioRef.current.addEventListener("timeupdate", onTimeUpdate);
     }
     function PrevSong() {
+        setNextPrev(true);
+
         let nextindex;
         if (currentSongIndex - 1 < 0) {
             setCurrentSongIndex(PlayListAudio.length - 1);
@@ -417,7 +423,7 @@ export default function BottomPult({ playlist }) {
 
             </div>
             <div className='Row3'>
-                <p className='Time'>{formatTime(currentTime)}/{formatTime(duration)}</p>
+                <p className='Time'>{formatTime(currentTime)}/{formatTime(duration) == NaN ? "" : formatTime(duration)}</p>
                 <img src="" alt="" />
                 <input type="range" className='Range' value={volume} onChange={ChangeVolume} name="volume" min="0" max="1" step="0.1"
                     style={{

@@ -4,7 +4,10 @@ import { CounterContext } from '../context/curent_song.jsx';
 
 export default function PlayListObj({id,title, artist, src,cover}) {
     const { value,setValue } = useContext(CounterContext);
+    const { setCurrent_ID } = useContext(CounterContext);
+
     console.log(value, id);
+    
     return (
         <>
             <div onDoubleClick={() => setValue(id)} className= {value == id ? "PlayListMenu2" : "PlayListMenu1"}>

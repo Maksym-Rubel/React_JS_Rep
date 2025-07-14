@@ -76,15 +76,19 @@ function App() {
   ]
   const PLAYLISTS_Info1 = [
     {
+      id:0,
       title: "My Playlist",
       author: "Maksym",
+      cover: "/public/imgs/iwasmadeforlovin.jpg",
       SongList: PLAYLIST_Song
     }
   ];
   const PLAYLISTS_Info2 = [
     {
+      id:1,
       title: "My Playlist2",
       author: "Maksym",
+      cover: "/public/imgs/bones.jpg",
       SongList: PLAYLIST_Song2
 
     }
@@ -108,7 +112,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout PLAYLIST_Song={ALLPLayLISt} />}>
             <Route index element={<HomePage playList1={PLAYLIST_Song} />} />
-            <Route path="playlist" element={<MainPage playList1={PLAYLIST_Song} />} />
+            <Route path="playlist" element={<MainPage playList1={ALLPLayLISt} />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -32,7 +32,7 @@
     background: linear-gradient(180deg, #181818f5, #181818d4);
     backdrop-filter: blur(10px);
     color: white;
-    display: block;
+    display: flex;
     font-family: Poppins, sans-serif;
 
     box-sizing: border-box;
@@ -42,4 +42,19 @@
 {
     width: 130px;
     border-radius: 7px;
+}
+
+.PlayListName22 {
+    font-size: clamp(1.8rem,10vw,5rem);
+    color: white;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
+    white-space: nowrap;
+}
+
+.PlayListAuthor22 {
+    font-size: 12px;
+    color: #9a9a9a;
+    font-family: Poppins, sans-serif;
+    margin: 5px;
 }

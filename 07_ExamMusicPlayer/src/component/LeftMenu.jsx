@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./LeftMenu.css"
 import PlayListView from './PlayListView'
-export default function LeftMenu({playlists}) {
+export default function LeftMenu({ playlists }) {
 
-    console.log(playlists[1][0]);
-    const [playlist, setPlaylist] = React.useState(playlists);
+
+    const [playlist, setPlaylist] = useState(playlists);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 1200px)");
+        const handleChange = (e) => {
+            setIsMobile(e.matches);
+        };
+        handleChange(mediaQuery);
+        mediaQuery.addEventListener("change", handleChange);
+        return () => mediaQuery.removeEventListener("change", handleChange);
+    }, []);
     return (
         <>
             <div className='AllMenuLeft'>
-                <div className='left-menu-header'>
-                    <div className='PositionDiv'>
-                        <svg className='blursvg3'>
+                <div className={isMobile ? "left-menu-header-mob" : "left-menu-header"}>
+                    <div className={isMobile ? "PositionDiv5" : "PositionDiv4"}>
+                        <svg className="blursvg3">
                             <defs>
                                 <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stop-color="rgba(255, 255, 255, 0.4)" />
@@ -30,7 +40,7 @@ export default function LeftMenu({playlists}) {
                         </svg>
                         <input className='SearchPlaylist' type="text" />
                     </div>
-                    <div className='PositionDiv'>
+                    <div className='PositionDiv4'>
                         <svg className='blursvg22'>
                             <defs>
                                 <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -56,12 +66,12 @@ export default function LeftMenu({playlists}) {
 
                     <div>
                         {
-                            playlist.map((item) => (
-                                <PlayListView {...item[0]}></PlayListView>
+                            playlist.map((item, index) => (
+                                <PlayListView {...item[0]} index={index}></PlayListView>
                             ))
                         }
-                       
-                        
+
+
                     </div>
                 </div>
             </div>

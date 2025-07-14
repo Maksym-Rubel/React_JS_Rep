@@ -1,8 +1,8 @@
 .left-menu {
-    
- 
 
-    width: 300px;
+
+
+    width: clamp(1.8rem, 300px, 30vw);
     height: 490px;
 
     background: linear-gradient(180deg, #181818f5, #181818d4);
@@ -15,15 +15,16 @@
     overflow: auto;
     padding: 15px;
 }
-.AllMenuLeft
-{
+
+.AllMenuLeft {
     margin: 0px;
     gap: 0px;
 }
+
 .left-menu-header {
 
 
-    width: 300px;
+    width: clamp(1.8rem, 300px, 30vw);
     height: 60px;
 
     border-radius: 15px 15px 0px 0px;
@@ -38,6 +39,22 @@
     overflow: hidden;
 
 }
+.left-menu-header-mob
+{
+    width: 70px;
+    height: 140px;
+
+    border-radius: 15px 15px 0px 0px;
+    background-color: #181818f5;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: Poppins, sans-serif;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
 .left-menu::-webkit-scrollbar {
     display: none;
@@ -51,6 +68,18 @@
     border-radius: 10px;
 }
 
+.PositionDiv5
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    
+}
 .blursvg3 {
     margin: 5px;
     width: 200px;
@@ -93,4 +122,13 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+.PositionDiv4 {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    /* background-color: turquoise; */
+    justify-content: center;
+    align-items: center;
 }
