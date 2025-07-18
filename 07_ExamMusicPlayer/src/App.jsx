@@ -10,73 +10,111 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './component/HomePage'
 
 function App() {
-  const PLAYLIST_Song = [
+  let Favorite_Song = [
+    {
+      title: "Master of 123131",
+      artist: "Metallica",
+      src: "/public/songs/MasterOfPuppets.mp3",
+      cover: "/public/imgs/Master_of_Puppets_cover.jpg",
+      favorite: true
+    }
+  ]
+  let SongLists = [
     {
       title: "Master of Puppets",
       artist: "Metallica",
       src: "/public/songs/MasterOfPuppets.mp3",
-      cover: "/public/imgs/Master_of_Puppets_cover.jpg"
+      cover: "/public/imgs/Master_of_Puppets_cover.jpg",
+      favorite: true
     },
     {
       title: "Creep",
       artist: "Radiohead",
       src: "/public/songs/Creep.mp3",
-      cover: "/public/imgs/creep.jpg"
+      cover: "/public/imgs/creep.jpg",
+      favorite: false
+
     },
     {
       title: "I Wass Made For Lovin' You",
       artist: "Kiss",
       src: "/public/songs/IWasMadeForLovingYou.mp3",
-      cover: "/public/imgs/iwasmadeforlovin.jpg"
+      cover: "/public/imgs/iwasmadeforlovin.jpg",
+      favorite: false
+
     },
     {
       title: "Every Breath You Take",
       artist: "The Police",
       src: "/public/songs/EveryBreathYouTake.mp3",
-      cover: "/public/imgs/the-police2003.jpg"
+      cover: "/public/imgs/the-police2003.jpg",
+      favorite: true
+
     },
     {
       title: "I Don't Know Why",
       artist: "Imagine Dragons",
       src: "/public/songs/IDontWannaKnowWhy.mp3",
-      cover: "/public/imgs/idontwanna.webp"
+      cover: "/public/imgs/idontwanna.webp",
+      favorite: false
+
     },
     {
       title: "Bones",
       artist: "Imagine Dragons",
       src: "/public/songs/imagine-dragons-bones.mp3",
-      cover: "/public/imgs/bones.jpg"
+      cover: "/public/imgs/bones.jpg",
+      favorite: false
+
+    },
+    {
+      title: "For Whom The Bell Tolls",
+      artist: "Metallica",
+      src: "/public/songs/Metallica - For Whom The Bell Tolls.mp3",
+      cover: "/public/imgs/forfrom.jpg",
+      favorite: false
+
     }
+  ]
+  const PLAYLIST_Song = [
+    SongLists[0],
+    SongLists[1],
+    SongLists[2],
+    SongLists[3],
+    SongLists[4],
+    SongLists[5]
   ]
   const PLAYLIST_Song2 = [
-    {
-      title: "I Wass Made For Lovin' You",
-      artist: "Kiss",
-      src: "/public/songs/IWasMadeForLovingYou.mp3",
-      cover: "/public/imgs/iwasmadeforlovin.jpg"
-    },
-    {
-      title: "Every Breath You Take",
-      artist: "The Police",
-      src: "/public/songs/EveryBreathYouTake.mp3",
-      cover: "/public/imgs/the-police2003.jpg"
-    },
-    {
-      title: "I Don't Know Why",
-      artist: "Imagine Dragons",
-      src: "/public/songs/IDontWannaKnowWhy.mp3",
-      cover: "/public/imgs/idontwanna.webp"
-    },
-    {
-      title: "Bones",
-      artist: "Imagine Dragons",
-      src: "/public/songs/imagine-dragons-bones.mp3",
-      cover: "/public/imgs/bones.jpg"
-    }
+    SongLists[1],
+    SongLists[5],
+    SongLists[3],
+    SongLists[6]
+
   ]
+  const PLAYLIST_Song3 = [
+    SongLists[1],
+    SongLists[5],
+    SongLists[2],
+
+
+  ]
+  const PLAYLIST_Song4 = [
+    SongLists[0],
+    SongLists[6]
+
+  ]
+  let FavoriteSong_PlayList = [
+    {
+      id: 0,
+      title: "Favorite",
+      author: "Music",
+      cover: "/public/imgs/all-my-favorite-songs.jpg",
+      SongList: Favorite_Song
+    }
+  ];
   const PLAYLISTS_Info1 = [
     {
-      id:0,
+      id: 1,
       title: "My Playlist",
       author: "Maksym",
       cover: "/public/imgs/iwasmadeforlovin.jpg",
@@ -85,17 +123,40 @@ function App() {
   ];
   const PLAYLISTS_Info2 = [
     {
-      id:1,
-      title: "My Playlist2",
+      id: 2,
+      title: "My Playlisddddt2",
       author: "Maksym",
       cover: "/public/imgs/bones.jpg",
       SongList: PLAYLIST_Song2
 
     }
   ];
-  const ALLPLayLISt = [
+  const PLAYLISTS_Info3 = [
+    {
+      id: 3,
+      title: "TestPlaylist",
+      author: "Maksym",
+      cover: "/public/imgs/bones.jpg",
+      SongList: PLAYLIST_Song3
+
+    }
+  ];
+  const PLAYLISTS_Info4 = [
+    {
+      id: 4,
+      title: "Hello",
+      author: "Maksym",
+      cover: "/public/imgs/images.jpg",
+      SongList: PLAYLIST_Song4
+
+    }
+  ];
+  let ALLPLayLISt = [
+    FavoriteSong_PlayList,
     PLAYLISTS_Info1,
-    PLAYLISTS_Info2
+    PLAYLISTS_Info2,
+    PLAYLISTS_Info3,
+    PLAYLISTS_Info4
   ];
   return (
     <>
@@ -110,8 +171,8 @@ function App() {
       </div> */}
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Layout PLAYLIST_Song={ALLPLayLISt} />}>
-            <Route index element={<HomePage playList1={PLAYLIST_Song} />} />
+          <Route path='/' element={<Layout PLAYLIST_Song={ALLPLayLISt} SongList={SongLists} />}>
+            <Route index element={<HomePage playList1={ALLPLayLISt} />} />
             <Route path="playlist" element={<MainPage playList1={ALLPLayLISt} />} />
           </Route>
         </Routes>

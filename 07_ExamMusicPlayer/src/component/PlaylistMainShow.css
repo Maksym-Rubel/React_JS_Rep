@@ -1,0 +1,54 @@
+.Background {
+    
+    background-color: #3a3a3a;
+    width: 215px;
+    height: 60px;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self:start;
+}
+.BackRow
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    
+    width: 150px;
+    overflow: hidden;
+}
+.imgMenu {
+    height: 100%;
+    border: 1px;
+
+}
+
+.blursvgMenu {
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+    backdrop-filter: blur(17px);
+    border-radius: 35px;
+
+}
+.imgIconfalse
+{
+    width: 15px;
+    height: 15px;
+    background-image: url(../../public/imgs/playicon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.PlayListName123
+{
+    white-space: nowrap;  
+    margin: 0 auto;
+    margin-left: 5px;
+    font-size: 15px;
+    min-width: 10px;
+}

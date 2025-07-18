@@ -14,16 +14,17 @@
 } */
 
 .MainBottomPult {
-  height: 100px;
-  width: 100%;
-  background-color: #181818f5;
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  font-family: Poppins, sans-serif;
+    height: 100px;
+    width: 100%;
+    background-color: #181818f5;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: Poppins, sans-serif;
 }
+
 .SongImg {
     width: 80px;
     height: 80px;
@@ -90,11 +91,37 @@
 }
 
 .SongImg1 {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 20%;
     margin-left: 5px;
+    background-image: url("/imgs/free-icon-heart-1077035.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
+.SongImgtrue {
+
+    width: 25px;
+    height: 25px;
+    background-image: url("/imgs/free-icon-heart-1077086.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.SongImgfalse {
+
+    width: 25px;
+    height: 25px;
+    background-image: url("/imgs/free-icon-heart-1077035.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 .ArtistName {
     color: #9a9a9a;
@@ -110,6 +137,7 @@
 
 
 }
+
 .blursvg1 {
     margin: 5px;
     width: 50px;
@@ -119,12 +147,13 @@
 
 
 }
+
 .blursvg2 {
     margin: 5px;
     width: 60px;
     height: 40px;
     backdrop-filter: blur(17px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 
@@ -265,8 +294,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconPrev
-{
+
+.ImgIconPrev {
     margin-right: 5px;
 
     width: 20px;
@@ -276,8 +305,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconNext
-{
+
+.ImgIconNext {
     margin-left: 4px;
     width: 20px;
     height: 20px;
@@ -286,8 +315,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconRepeat
-{
+
+.ImgIconRepeat {
     width: 25px;
     height: 25px;
     background-image: url(../../public/imgs/repeat.png);
@@ -295,8 +324,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconRepeatActive
-{
+
+.ImgIconRepeatActive {
     width: 25px;
     height: 25px;
     background-image: url(../../public/imgs/repeatActive.png);
@@ -304,8 +333,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconShuffle
-{
+
+.ImgIconShuffle {
     width: 20px;
     height: 20px;
     background-image: url(../../public/imgs/shuffle.png);
@@ -313,8 +342,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.ImgIconShuffleActive
-{
+
+.ImgIconShuffleActive {
     width: 20px;
     height: 20px;
     background-image: url(../../public/imgs/shuffleActive.png);

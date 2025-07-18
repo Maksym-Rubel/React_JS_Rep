@@ -1,14 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import './BottomPult.css'
 import { CounterContext } from '../context/curent_song.jsx';
 import { useContext } from 'react';
 import ColorThief from 'colorthief';
-export default function BottomPult({ playlist }) {
+export default function BottomPult({ playlist, SongList }) {
 
     const { value, setValue, Current_Song_Playlist, setCurrent_Song_Playlist } = useContext(CounterContext);
+    const { Current_ID, setCurrent_ID } = useContext(CounterContext);
+
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [PlayListAudio, setPlayListAudio] = useState(playlist);
+    const [ALLPlaylistAudio, setALLPlaylistAudio] = useState(playlist);
+    const [SongLists, setSongLists] = useState(SongList);
+
+
     const [volume, setVolume] = useState(0.5);
     const [currentTime, setTime] = useState(0);
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -17,8 +23,97 @@ export default function BottomPult({ playlist }) {
     const [repeat, setRepeat] = useState(false);
     const [shuffle, setShuffle] = useState(false);
     const [IsNextPrev, setNextPrev] = useState(false);
-    useEffect(() => {
+    const repeatRef = useRef(repeat);
+    const shuffleRef = useRef(shuffle);
+    const CurrentId_Ref = useRef(Current_ID);
+    const [favorite, setFavorite] = useState(PlayListAudio[currentSongIndex].favorite);
 
+    const Current_Song_PlaylistRef = useRef(Current_Song_Playlist);
+    useEffect(() => {
+        CurrentId_Ref.current = Current_ID;
+    }, [Current_ID]);
+    useEffect(() => {
+        Current_Song_PlaylistRef.current = Current_Song_Playlist
+
+    }, [Current_Song_Playlist]);
+    useEffect(() => {
+        console.log("ChangeStart")
+
+    }, [CurrentId_Ref]);
+    useEffect(() => {
+        repeatRef.current = repeat;
+    }, [repeat]);
+
+    // useEffect(() => {
+    //     console.log("Увесь SongLists:", SongLists);
+    //     console.log("Улюблені:", SongLists.filter(song => song.favorite));
+    //     console.log("ALLPlaylistAudio перед оновленням:", ALLPlaylistAudio);
+    //     console.log("ALLPlaylistAudio перед оновленням:", ALLPlaylistAudio[0][0].SongList);
+    //     console.log(Current_ID)
+
+    //     // setALLPlaylistAudio(updated);
+    // }, [Current_Song_Playlist]);
+    // useEffect(() => {
+
+    //     ALLPlaylistAudio[0][0].SongList = SongLists.filter(song => song.favorite);
+    // }, [])
+
+    useEffect(() => {
+        shuffleRef.current = shuffle;
+    }, [shuffle]);
+    useEffect(() => {
+        const audio = audioRef.current;
+
+        if (!audio) return;
+        audioRef.current.addEventListener('ended', () => {
+            if (shuffleRef.current && !repeatRef.current) {
+                console.log("Shuffle is on");
+                console.log("Repat is " + repeatRef.current);
+                console.log("Shuffle is " + shuffle);
+
+                RandomSong();
+            }
+            else if (!shuffleRef.current && !repeatRef.current) {
+                console.log("NExt is on");
+                console.log("Repat is " + repeat);
+                console.log("Shuffle is " + shuffle);
+                NextSongButton();
+            }
+            else if (repeatRef.current && !shuffleRef.current) {
+                console.log("Repat is on");
+                console.log("Repat is " + repeat);
+                console.log("Shuffle is " + shuffle);
+                if (audioRef.current) {
+                    audioRef.current.currentTime = 0;
+                    audioRef.current.play();
+                }
+            }
+            else if (shuffleRef.current && repeatRef.current) {
+                console.log("Repeat is on");
+                console.log("Repat is " + repeat);
+                console.log("Shuffle is " + shuffle);
+                audioRef.current.currentTime = 0;
+                audioRef.current.play();
+            }
+        });
+    }, [audioRef.current])
+    useEffect(() => {
+        console.log("Current ID = " + Current_ID)
+
+        if (Current_ID === 0) {
+            console.log("ChangePRoces")
+
+            const filteredSongs = SongLists.filter(song => song.favorite);
+            const isSame = JSON.stringify(Current_Song_Playlist) === JSON.stringify(filteredSongs);
+
+            if (!isSame) {
+                console.log("ChangePRoces");
+                setCurrent_Song_Playlist(filteredSongs);
+            }
+        }
+        else {
+            console.log("You lox")
+        }
         if (audioRef.current) {
             audioRef.current.pause();
             setIsPlaying(false);
@@ -59,6 +154,22 @@ export default function BottomPult({ playlist }) {
         }
 
     }, [value]);
+    useEffect(() => {
+        setValue(currentSongIndex);
+    }, [currentSongIndex])
+    // useEffect(() => {
+    //     const audio = audioRef.current;
+    //     if (!audio) return;
+
+    //     const handleEnded = () => {
+    //         console.log("Track ended");
+    //         NextSong();
+    //     };
+
+    //     audio.addEventListener("ended", handleEnded);
+
+
+    // }, []);
     function getRandomSongIndex(currentIndex, playlistLength) {
         if (playlistLength <= 1) return 0;
 
@@ -87,34 +198,7 @@ export default function BottomPult({ playlist }) {
         audioRef.current.addEventListener("timeupdate", onTimeUpdate);
     }
 
-    const onTimeUpdate = () => {
-        if (audioRef.current.currentTime === audioRef.current.duration) {
-            if (shuffle && !repeat) {
-                console.log("Shuffle is on");
-                RandomSong();
-            }
-            else if (!shuffle && !repeat) {
-                console.log("NExt is on");
 
-                NextSong();
-            }
-            else if (repeat) {
-                console.log("Repat is on");
-
-                audioRef.current.currentTime = 0;
-                audioRef.current.play();
-            }
-            else if (shuffle && repeat) {
-                console.log("Repeat is on");
-
-                audioRef.current.currentTime = 0;
-                audioRef.current.play();
-            }
-
-        }
-        // console.log("Time update", audioRef.current.currentTime);
-        setTime(Math.floor(audioRef.current.currentTime));
-    };
 
     function getDominantColor() {
         let dominantColor;
@@ -169,29 +253,62 @@ export default function BottomPult({ playlist }) {
 
 
     function PlayAudio() {
+        console.log(Current_Song_Playlist)
+
+
         setValue(currentSongIndex);
         if (!audioRef.current) {
             audioRef.current = new Audio(PlayListAudio[currentSongIndex].src);
         }
+        const isNewAudio = !audioRef.current || audioRef.current.src !== PlayListAudio[currentSongIndex].src;
 
         if (!isPlaying) {
-            audioRef.current.play();
-            audioRef.current.volume = volume;
-            setIsPlaying(true);
+            if (isNewAudio) {
+                audioRef.current.play();
+                audioRef.current.volume = volume;
+                setIsPlaying(true);
 
-            audioRef.current.addEventListener('loadedmetadata', () => {
-                setDuration(audioRef.current.duration);
+                audioRef.current.addEventListener('loadedmetadata', () => {
+                    setDuration(audioRef.current.duration);
 
-            });
+                });
 
-            audioRef.current.addEventListener("timeupdate", onTimeUpdate);
-
+                audioRef.current.addEventListener("timeupdate", onTimeUpdate);
+            }
 
         } else {
             audioRef.current.pause();
 
             setIsPlaying(false);
         }
+
+
+        // setValue(currentSongIndex);
+
+        // const isNewAudio = !audioRef.current || audioRef.current.src !== PlayListAudio[currentSongIndex].src;
+
+        // if (isNewAudio) {
+        //     if (audioRef.current) {
+        //         audioRef.current.pause();
+        //     }
+
+        //     audioRef.current = new Audio(PlayListAudio[currentSongIndex].src);
+        //     audioRef.current.volume = volume;
+
+
+
+
+
+        // }
+
+        // if (!isPlaying) {
+        //     audioRef.current.play();
+        //     setIsPlaying(true);
+        //     audioRef.current.addEventListener("timeupdate", onTimeUpdate);
+        // } else {
+        //     audioRef.current.pause();
+        //     setIsPlaying(false);
+        // }
     }
     function ChangeVolume(e) {
         const newVolume = e.target.value;
@@ -208,19 +325,63 @@ export default function BottomPult({ playlist }) {
             audioRef.current.currentTime = newTime;
         }
     }
-    function NextSong() {
-        setNextPrev(true);
+    function getNextIndex() {
         let nextindex;
         if (PlayListAudio.length == currentSongIndex + 1) {
-            setCurrentSongIndex(0);
-            setValue(0);
+            console.log("Playlist list length ==> " + PlayListAudio.length)
+            console.log(currentSongIndex)
+            // setCurrentSongIndex(0);
+            // setValue(0);
             nextindex = 0;
+            console.log("hello is 0");
+
         }
         else {
-            setCurrentSongIndex((currentSongIndex + 1));
-            setValue(currentSongIndex + 1);
+            console.log("Playlist list length ==> " + PlayListAudio.length)
+            // setCurrentSongIndex((currentSongIndex + 1));
+            // setValue(currentSongIndex + 1);
+            console.log("Current Index ==> " + (currentSongIndex + 1));
+
             nextindex = currentSongIndex + 1;
+            console.log("nextindex Index ==> " + nextindex);
+            console.log("hello");
+
         }
+        setCurrentSongIndex(nextindex);
+        setValue(nextindex);
+
+        return nextindex
+    }
+    function NextSong() {
+        setNextPrev(true);
+
+        setCurrentSongIndex((previndex) => {
+            const nextindex = (previndex + 1) % PlayListAudio.length;
+
+
+            if (isPlaying) {
+                audioRef.current.pause();
+            }
+            audioRef.current = new Audio(PlayListAudio[nextindex].src);
+            audioRef.current.play();
+            audioRef.current.volume = volume;
+            setIsPlaying(true);
+
+            audioRef.current.addEventListener('loadedmetadata', () => {
+                setDuration(audioRef.current.duration);
+
+            });
+
+            audioRef.current.addEventListener("timeupdate", onTimeUpdate);
+
+            return nextindex;
+        });
+
+
+    }
+    function NextSongButton() {
+        setNextPrev(true);
+        let nextindex = getNextIndex();
 
         if (isPlaying) {
             audioRef.current.pause();
@@ -267,17 +428,28 @@ export default function BottomPult({ playlist }) {
 
         audioRef.current.addEventListener("timeupdate", onTimeUpdate);
     }
+    const onTimeUpdate = () => {
+        setTime(Math.floor(audioRef.current.currentTime));
+    };
+
     function RepeatSong() {
-        console.log("Reapeat is " + repeat);
+
 
         setRepeat(!repeat);
         console.log("Reapeat is " + repeat);
 
     }
-
+    function ChaingeFavoriteToggle() {
+        const updated = [...PlayListAudio]
+        updated[currentSongIndex] = {
+            ...updated[currentSongIndex],
+            favorite: !updated[currentSongIndex].favorite
+        }
+        setPlayListAudio(updated);
+    }
     function ShuffleSongs() {
         setShuffle(!shuffle);
-        console.log("Repeat is " + shuffle);
+        console.log("Shuffle is " + shuffle);
 
     }
     return (
@@ -294,7 +466,7 @@ export default function BottomPult({ playlist }) {
                     <div className='SongName'>{PlayListAudio[currentSongIndex].title}</div>
                     <div className='ArtistName'>{PlayListAudio[currentSongIndex].artist}</div>
                 </div>
-                <img className='SongImg1' src="https://cdn-icons-png.flaticon.com/512/158/158722.png" alt="" />
+                <div onClick={ChaingeFavoriteToggle } className={PlayListAudio[currentSongIndex].favorite ? "SongImgtrue" : "SongImgfalse"}></div>
             </div>
             <div className='Row2'>
                 <div className='CollumnInRow2'>
@@ -386,7 +558,7 @@ export default function BottomPult({ playlist }) {
                                     fill="transparent"></rect>
                                 <p>dsadasd</p>
                             </svg>
-                            <button onClick={() => NextSong()} className='ButtonNextPrev'><div className="ImgIconNext"></div></button>
+                            <button onClick={() => NextSongButton()} className='ButtonNextPrev'><div className="ImgIconNext"></div></button>
                         </div>
                         <div className='PositionDiv'>
 

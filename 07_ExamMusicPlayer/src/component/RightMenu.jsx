@@ -10,7 +10,16 @@ export default function RightMenu({ playlists }) {
     useEffect(() => {
         setPlaylist(Current_Song_Playlist);
     }, [Current_Song_Playlist]);
-
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 801);
+    // useEffect(() => {
+    //     const mediaQuery = window.matchMedia("(max-width: 801px)");
+    //     const handleChange = (e) => {
+    //         setIsMobile(e.matches);
+    //     };
+    //     handleChange(mediaQuery);
+    //     mediaQuery.addEventListener("change", handleChange);
+    //     return () => mediaQuery.removeEventListener("change", handleChange);
+    // }, []);
     function GetCover() {
         return playlist.find((i, index) => index === value)?.cover;
     }
@@ -22,7 +31,7 @@ export default function RightMenu({ playlists }) {
     }
     return (
         <>
-            <div className='AllMenuLeft'>
+            <div className={isMobile ? "AllMenuLeftHidden" : "AllMenuLeft"}>
                 <div className='left-menu1'>
                     <img className='imgSet' src={GetCover()}></img>
                     <div>

@@ -25,3 +25,9 @@
     font-family: Poppins, sans-serif;
     margin: 5px;
 }
+.linkmenu
+{
+    text-decoration:none;
+    outline: none;
+
+}
